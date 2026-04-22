@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Current Affairs Quiz</title>
+<style>
+body { font-family: Arial; background:#f4f6f8; padding:20px; }
+.question { background:#fff; padding:15px; margin-bottom:15px; border-radius:8px; }
+.option { display:block; margin:5px 0; cursor:pointer; }
+.correct { color:green; font-weight:bold; }
+.wrong { color:red; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<h2>Current Affairs Quiz (Q1–Q20)</h2>
+
+<div id="quiz"></div>
+
+<script>
+
+const quizData = [
+{
+q:`1. Vice President C. P. Radhakrishnan released an updated edition of the Constitution of India in Sindhi language at Uparashtrapati Bhawan on April 10, 2026 (Sindhi Bhasha Diwas). The edition included both Devanagari and Persian scripts. This initiative is aligned with which long-term national vision?`,
+options:["Digital India 2035","Amrit Kaal 2040","Viksit Bharat 2047","National Integration Mission 2030"],
+answer:2
+},
+{
+q:`2. The Sindhi version of the Constitution of India released in 2026 included dual script representation. Which statement correctly reflects the script usage?`,
+options:["Persian script was used in both editions","Devanagari script in first edition and Persian in second","Only Devanagari script was used historically","Scripts were introduced for the first time simultaneously"],
+answer:1
+},
+{
+q:`3. Doordarshan (DD) signed a Memorandum of Understanding (MoU) with the Indian Council for Cultural Relations (ICCR) at Doordarshan Bhawan, New Delhi. What is the primary aim of this collaboration?`,
+options:["Strengthening satellite communication","Promoting Indian art, culture, and heritage globally","Expanding financial broadcasting services","Developing digital education platforms"],
+answer:1
+},
+{
+q:`4. The MoU between Doordarshan (DD) and ICCR was signed by K. Satish Nambudiripad and K. Nandini Singla. What is the duration of this agreement?`,
+options:["One year","Two years","Three years","Five years"],
+answer:2
+},
+{
+q:`5. The Government of Gujarat signed an MoU with Allegiance International Company Limited for establishing an Indo-Taiwan Industrial Park in Sanand–Dholera. What is the primary objective of this project?`,
+options:["Boost textile exports","Promote automobile sector","Strengthen semiconductor and electronics ecosystem","Develop renewable energy clusters"],
+answer:2
+},
+{
+q:`6. The Indo-Taiwan Industrial Park initiative in Gujarat reflects a strategic push towards which broader objective?`,
+options:["Agricultural modernization","Tourism development","High-tech manufacturing growth","Port-led development"],
+answer:2
+},
+{
+q:`7. Housing and Urban Development Corporation (HUDCO) and NBCC (India) Limited signed two MoUs for redevelopment and asset monetisation in New Delhi. The redevelopment of August Kranti Bhawan covers:`,
+options:["15,200 sq. m","18,830 sq. m","21,500 sq. m","24,000 sq. m"],
+answer:1
+},
+{
+q:`8. Under the HUDCO–NBCC agreement, the second MoU primarily focuses on:`,
+options:["Rural housing expansion","Asset monetisation of NBCC projects","Metro rail construction","Smart city financing"],
+answer:1
+},
+{
+q:`9. The 7th edition of the India–Uzbekistan Joint Military Exercise ‘DUSTLIK 2026’ was conducted in Gurumsaray Field Training Area, Namangan. The exercise concluded with a validation phase lasting:`,
+options:["24 hours","36 hours","48 hours","72 hours"],
+answer:2
+},
+{
+q:`10. India–Uzbekistan Exercise ‘DUSTLIK 2026’ involved contingents from the Indian Army (IA), Indian Air Force (IAF), and Uzbekistan forces. The main objective of such joint exercises is:`,
+options:["Trade cooperation","Military interoperability and coordination","Cultural diplomacy","Technology transfer"],
+answer:1
+},
+{
+q:`11. India and Myanmar signed an MoU for constructing a school in Nay Pyi Taw focusing on early childhood development. This initiative aligns with which policy?`,
+options:["Act East Policy","Neighbourhood First Policy","Indo-Pacific Strategy","Look West Policy"],
+answer:1
+},
+{
+q:`12. The Reserve Bank of India (RBI) launched its medium-term strategy ‘Utkarsh 2029’ for the period April 2026–March 2029. It outlines how many deliverables?`,
+options:["42","45","49","60"],
+answer:2
+},
+{
+q:`13. Under RBI’s ‘Utkarsh 2029’, ‘Project Sa-Mudra’ focuses on modernising:`,
+options:["Payment systems","Currency management systems","Rural banking","Credit delivery"],
+answer:1
+},
+{
+q:`14. ‘Utkarsh 2029’ by RBI is structured across six pillars. Which of the following is one of those pillars?`,
+options:["Fiscal consolidation","Global integration","Trade facilitation","Export promotion"],
+answer:1
+},
+{
+q:`15. The Securities and Exchange Board of India (SEBI) launched SUPCOMS 2.1. What does this platform replace?`,
+options:["Paper filings","Email-based communication","SMS alerts","Telephonic reporting"],
+answer:1
+},
+{
+q:`16. The Cyber-Sec Audit Compliance (C-SAC) platform launched by SEBI primarily aims to:`,
+options:["Monitor IPO approvals","Identify cybersecurity compliance gaps","Track stock prices","Regulate mutual funds"],
+answer:1
+},
+{
+q:`17. Paytm introduced biometric authentication for UPI transactions in line with RBI’s 2-factor authentication norms effective April 1, 2026. What is the cardless ATM withdrawal limit per transaction?`,
+options:["₹5,000","₹7,500","₹10,000","₹15,000"],
+answer:2
+},
+{
+q:`18. The introduction of biometric authentication in UPI transactions primarily aims to:`,
+options:["Increase transaction volume","Enhance security and user convenience","Replace banking systems","Reduce digital payments"],
+answer:1
+},
+{
+q:`19. Central Ayurveda Research Institute (CARI), Bengaluru, became the first CCRAS institute to receive ISO 15189:2022 accreditation. This certification relates to:`,
+options:["Industrial safety","Environmental standards","Medical laboratory quality","Cybersecurity"],
+answer:2
+},
+{
+q:`20. ISO 15189:2022 accreditation ensures compliance with international standards in:`,
+options:["Financial auditing","Laboratory accuracy and reliability","Manufacturing efficiency","Software testing"],
+answer:1
+},
+{
+q: `21. Ismaïl Omar Guelleh was re-elected as President of Djibouti for a sixth consecutive term. He represents which political alliance?`,
+options: ["A. Democratic Reform Alliance","B. Union for the Presidential Majority (UMP)","C. National People’s Front","D. Unified Democratic Centre"],
+answer: 1
+},
+
+{
+q: `22. NASA’s Artemis II mission completed a 10-day lunar journey and returned to Earth. What historic milestone did it achieve?`,
+options: ["A. First private moon landing","B. First Mars mission","C. First ship-to-ship communication with ISS","D. First reusable spacecraft mission"],
+answer: 2
+},
+
+{
+q: `23. The Artemis II mission, involving astronauts from the USA and Canada, used which spacecraft?`,
+options: ["A. Dragon Capsule","B. Orion Capsule","C. Starliner","D. Apollo Module"],
+answer: 1
+},
+
+{
+q: `24. The 22nd Senior Asian Wrestling Championships 2026 held in Bishkek, Kyrgyzstan saw India rank 5th. Which country topped the medal tally?`,
+options: ["A. Japan","B. Iran","C. China","D. Kazakhstan"],
+answer: 1
+},
+
+{
+q: `25. The Asian Boxing Championships 2026 held in Ulaanbaatar, Mongolia was topped by which country?`,
+options: ["A. India","B. Uzbekistan","C. Kazakhstan","D. China"],
+answer: 2
+},
+
+{
+q: `26. Legendary playback singer Asha Bhosle, who received the Padma Vibhushan in 2008, was honoured in which field?`,
+options: ["A. Science","B. Literature","C. Arts","D. Public Affairs"],
+answer: 2
+},
+
+{
+q: `27. Colonel Sonam Wangchuk, popularly known as the ‘Lion of Ladakh’, was awarded which gallantry honour?`,
+options: ["A. Param Vir Chakra","B. Ashoka Chakra","C. Mahavir Chakra","D. Kirti Chakra"],
+answer: 2
+},
+
+{
+q: `28. National Safe Motherhood Day (NSMD), observed on April 11, commemorates the birth anniversary of:`,
+options: ["A. Sarojini Naidu","B. Kasturba Gandhi","C. Indira Gandhi","D. Kamala Nehru"],
+answer: 1
+},
+
+{
+q: `29. National Safe Motherhood Day was first observed in India in which year?`,
+options: ["A. 2000","B. 2003","C. 2005","D. 2008"],
+answer: 1
+},
+
+{
+q: `30. World Parkinson’s Day is observed annually on April 11 to mark the birth anniversary of:`,
+options: ["A. Louis Pasteur","B. Edward Jenner","C. James Parkinson","D. Alexander Fleming"],
+answer: 2
+},
+
+{
+q: `31. The theme for World Parkinson’s Day 2026 is:`,
+options: ["A. Care for All","B. Bridge the Care Gap","C. Health for Humanity","D. End Neuro Diseases"],
+answer: 1
+},
+
+{
+q: `32. The Artificial Intelligence hub ‘Aikam’ in Telangana signed an MoU with Deakin University. The collaboration focuses on:`,
+options: ["A. Agricultural innovation","B. Artificial Intelligence skilling and innovation","C. Defence systems","D. Space technology"],
+answer: 1
+},
+
+{
+q: `33. Doordarshan (DD), India’s public broadcaster, was established in:`,
+options: ["A. 1947","B. 1955","C. 1959","D. 1965"],
+answer: 2
+},
+
+{
+q: `34. The Indian Council for Cultural Relations (ICCR) was established in:`,
+options: ["A. 1945","B. 1950","C. 1955","D. 1960"],
+answer: 1
+},
+
+{
+q: `35. Housing and Urban Development Corporation (HUDCO) was established in:`,
+options: ["A. 1965","B. 1970","C. 1975","D. 1980"],
+answer: 1
+},
+
+{
+q: `36. The Central Council for Research in Ayurvedic Sciences (CCRAS) was established in:`,
+options: ["A. 1965","B. 1970","C. 1978","D. 1985"],
+answer: 2
+},
+
+{
+q: `37. The National Aeronautics and Space Administration (NASA) was established in:`,
+options: ["A. 1945","B. 1950","C. 1958","D. 1965"],
+answer: 2
+},
+
+{
+q: `38. Unified Payments Interface (UPI), India’s real-time digital payment system, was launched in:`,
+options: ["A. 2014","B. 2015","C. 2016","D. 2018"],
+answer: 2
+},
+
+{
+q: `39. The RBI’s ‘Utkarsh 2029’ strategy emphasizes strengthening its position as a:`,
+options: ["A. Regional financial authority","B. World-class full-service central bank","C. Digital payment regulator","D. Fiscal policy institution"],
+answer: 1
+},
+
+{
+q: `40. The Indo-Taiwan Industrial Park in Gujarat was planned in which specific region?`,
+options: ["A. Surat–Vadodara","B. Rajkot–Jamnagar","C. Sanand–Dholera","D. Bhavnagar–Porbandar"],
+answer: 2
+}
+
+];
+
+const quizContainer = document.getElementById("quiz");
+
+quizData.forEach((item, index) => {
+let div = document.createElement("div");
+div.classList.add("question");
+
+let html = `<p>${item.q}</p>`;
+
+item.options.forEach((opt, i) => {
+html += `<label class="option">
+<input type="radio" name="q${index}" onclick="checkAnswer(${index},${i})"> ${opt}
+</label>`;
+});
+
+html += `<p id="result${index}"></p>`;
+
+div.innerHTML = html;
+quizContainer.appendChild(div);
+});
+
+function checkAnswer(qIndex, selected) {
+let correct = quizData[qIndex].answer;
+let result = document.getElementById("result"+qIndex);
+
+if(selected === correct){
+result.innerHTML = "✅ Correct";
+result.className = "correct";
+} else {
+result.innerHTML = "❌ Wrong. Correct Answer: " + quizData[qIndex].options[correct];
+result.className = "wrong";
+}
+}
+
+</script>
+
+</body>
+</html>
